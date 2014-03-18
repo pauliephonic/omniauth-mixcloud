@@ -5,9 +5,9 @@ module OmniAuth
     class MixCloud < OmniAuth::Strategies::OAuth2
       DEFAULT_SCOPE = 'non-expiring'
 
-      option :name => "mixcloud"
+      option :name, "mixcloud"
 
-      option :client_options => {
+      option :client_options, {
         :site => 'https://www.mixcloud.com',
         :authorize_url => '/oauth/authorize',
         :token_url => '/oauth/access_token'
