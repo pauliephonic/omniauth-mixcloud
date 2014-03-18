@@ -4,7 +4,7 @@ require 'omniauth/soundcloud/version'
 
 Gem::Specification.new do |s|
   s.name     = 'omniauth-mixcloud'
-  s.version  = OmniAuth::SoundCloud::VERSION
+  s.version  = OmniAuth::MixCloud::VERSION
   s.authors  = ['Rich Morgan']
   s.email    = ['rich@embedtree.com']
   s.summary  = 'Mixcloud strategy for OmniAuth'
