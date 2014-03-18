@@ -1,7 +1,7 @@
 require 'spec_helper'
 require 'omniauth-mixcloud'
 
-describe OmniAuth::Strategies::SoundCloud do
+describe OmniAuth::Strategies::MixCloud do
   let(:request) do
     double('request',
             :params => {},
