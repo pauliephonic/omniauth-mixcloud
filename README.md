@@ -1,4 +1,4 @@
-# OmniAuth SoundCloud
+# OmniAuth MixCloud
 
 This gem contains the MixcloudCloud strategy for OmniAuth 1.0.
 
