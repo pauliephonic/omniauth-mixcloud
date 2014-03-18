@@ -8,7 +8,7 @@ module OmniAuth
       option :name, "mixcloud"
 
       option :client_options, {
-        :site => 'https://api.mixcloud.com',
+        :site => 'https://www.mixcloud.com',
         :authorize_url => 'oauth/authorize',
         :token_url => '/oauth/access_token'
       }
