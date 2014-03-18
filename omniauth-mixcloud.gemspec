@@ -3,12 +3,12 @@ $:.push File.expand_path('../lib', __FILE__)
 require 'omniauth/soundcloud/version'
 
 Gem::Specification.new do |s|
-  s.name     = 'omniauth-soundcloud'
+  s.name     = 'omniauth-mixcloud'
   s.version  = OmniAuth::SoundCloud::VERSION
-  s.authors  = ['Lee Martin']
-  s.email    = ['lee@soundcloud.com']
-  s.summary  = 'SoundCloud strategy for OmniAuth'
-  s.homepage = 'https://github.com/soundcloud/omniauth-soundcloud'
+  s.authors  = ['Rich Morgan']
+  s.email    = ['rich@embedtree.com']
+  s.summary  = 'Mixcloud strategy for OmniAuth'
+  s.homepage = 'https://github.com/morganric/omniauth-mixcloud'
 
   s.files         = `git ls-files`.split("\n")
   s.test_files    = `git ls-files -- {test,spec,features}/*`.split("\n")

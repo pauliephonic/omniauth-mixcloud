@@ -1,5 +1,5 @@
 require 'spec_helper'
-require 'omniauth-soundcloud'
+require 'omniauth-mixcloud'
 
 describe OmniAuth::Strategies::SoundCloud do
   let(:request) do
@@ -10,7 +10,7 @@ describe OmniAuth::Strategies::SoundCloud do
   end
 
   subject do
-    OmniAuth::Strategies::SoundCloud.new(nil, @options || {}).tap do |strategy|
+    OmniAuth::Strategies::MixCloud.new(nil, @options || {}).tap do |strategy|
       strategy.stub(:request => request)
     end
   end
@@ -18,22 +18,22 @@ describe OmniAuth::Strategies::SoundCloud do
   it_should_behave_like 'an oauth2 strategy'
 
   describe '#client' do
-    it 'should have the correct SoundCloud site' do
-      subject.client.site.should eq("https://api.soundcloud.com")
+    it 'should have the correct MixCloud site' do
+      subject.client.site.should eq("https://api.mixcloud.com")
     end
 
     it 'should have the correct authorization url' do
-      subject.client.options[:authorize_url].should eq("/connect")
+      subject.client.options[:authorize_url].should eq("/oauth/authorize")
     end
 
     it 'should have the correct token url' do
-      subject.client.options[:token_url].should eq('/oauth2/token')
+      subject.client.options[:token_url].should eq('/oauth/access_token')
     end
   end
 
   describe '#callback_path' do
     it 'should have the correct callback path' do
-      subject.callback_path.should eq('/auth/soundcloud/callback')
+      subject.callback_path.should eq('/auth/mixcloud/callback')
     end
   end
 

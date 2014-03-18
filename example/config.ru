@@ -1,10 +1,10 @@
 require 'bundler/setup'
 require 'sinatra/base'
-require 'omniauth-soundcloud'
+require 'omniauth-mixcloud'
 
 class App < Sinatra::Base
   get '/' do
-    redirect '/auth/soundcloud'
+    redirect '/auth/mixcloud'
   end
 
   get '/auth/:provider/callback' do
@@ -21,7 +21,7 @@ end
 use Rack::Session::Cookie
 
 use OmniAuth::Builder do
-  provider :soundcloud, ENV['APP_ID'], ENV['APP_SECRET'], :scope => 'non-expiring'
+  provider :mixcloud, 'wpLF5wDyDUQYQJnrFY', 'jnu8tAF89tecB99ztdautCUduWXnQTUj'#, :scope => 'non-expiring'
 end
 
 run App.new

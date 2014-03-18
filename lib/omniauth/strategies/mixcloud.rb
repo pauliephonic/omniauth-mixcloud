@@ -2,15 +2,15 @@ require 'omniauth/strategies/oauth2'
 
 module OmniAuth
   module Strategies
-    class SoundCloud < OmniAuth::Strategies::OAuth2
+    class MixCloud < OmniAuth::Strategies::OAuth2
       DEFAULT_SCOPE = 'non-expiring'
 
-      option :name, "soundcloud"
+      option :name, "mixcloud"
 
       option :client_options, {
-        :site => 'https://api.soundcloud.com',
-        :authorize_url => '/connect',
-        :token_url => '/oauth2/token'
+        :site => 'https://api.mixcloud.com',
+        :authorize_url => 'oauth/authorize',
+        :token_url => '/oauth/access_token'
       }
 
       option :access_token_options, {
@@ -79,4 +79,4 @@ module OmniAuth
   end
 end
 
-OmniAuth.config.add_camelization 'soundcloud', 'SoundCloud'
+OmniAuth.config.add_camelization 'mixcloud', 'MixCloud'
