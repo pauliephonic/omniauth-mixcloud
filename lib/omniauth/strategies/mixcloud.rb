@@ -23,11 +23,10 @@ module OmniAuth
       info do
         prune!({
           'nickname' => raw_info['username'],
-          'name' => raw_info['full_name'],
-          'image' => raw_info['avatar_url'],
-          'description' => raw_info['description'],
+          'name' => raw_info['name'],
+          'image' => raw_info['pictures']['medium'],
           'urls' => {
-            'Website' => raw_info['website']
+            'Website' => raw_info['url']
           },
           'location' => raw_info['city']
         })
@@ -47,7 +46,7 @@ module OmniAuth
       end
 
       def raw_info
-        @raw_info ||= access_token.get('/me.json').parsed
+        @raw_info ||= access_token.get("https://api.mixcloud.com/me/?access_token=#{access_token.token}").parsed
       end
 
       def build_access_token
