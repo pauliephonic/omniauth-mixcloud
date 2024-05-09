@@ -15,7 +15,10 @@ Then `bundle install`.
 ## Basic Usage
 
     use OmniAuth::Builder do
-    	provider "mixcloud", ENV['MIXCLOUD_CLIENT_ID'], ENV['MIXCLOUD_SECRET']
+    	provider "mixcloud", ENV['MIXCLOUD_CLIENT_ID'], ENV['MIXCLOUD_SECRET'], {
+            :callback_path => '/auth/mixcloud/callback',
+            :token_params => {redirect_uri: "https://example.app/auth/mixcloud/callback?myparam=myvalue"}
+        }
     end
 
 ## Supported Flows
