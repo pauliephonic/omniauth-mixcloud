@@ -55,6 +55,11 @@ module OmniAuth
         end
       end
 
+      def callback_url
+        options[:callback_url] || (full_host + callback_path + query_string)
+      end
+
+
       def access_token_options
         options.access_token_options.inject({}) { |h,(k,v)| h[k.to_sym] = v; h }
       end

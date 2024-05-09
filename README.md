@@ -1,13 +1,13 @@
 # OmniAuth MixCloud
 
-This gem contains the MixcloudCloud strategy for OmniAuth 1.0.
+This gem contains the MixcloudCloud strategy for OmniAuth 1.0. Forked to support omniauth-oauth2 1.7. Working flow as of 9th May 2024
 
 ## Installing
 
 Add to your `Gemfile`:
 
 ```ruby
-gem 'omniauth-mixcloud'
+gem 'omniauth-mixcloud', git: 'https://github.com/pauliephonic/omniauth-mixcloud.git'
 ```
 
 Then `bundle install`.
